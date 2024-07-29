@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\MinimalAPI.csproj": {}
+    "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\MinimalAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\MinimalAPI.csproj": {
+    "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\MinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\MinimalAPI.csproj",
+        "projectUniqueName": "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\MinimalAPI.csproj",
         "projectName": "MinimalAPI",
-        "projectPath": "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\MinimalAPI.csproj",
+        "projectPath": "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\MinimalAPI.csproj",
         "packagesPath": "C:\\Users\\49470161831\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\obj\\",
+        "outputPath": "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\49470161831\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

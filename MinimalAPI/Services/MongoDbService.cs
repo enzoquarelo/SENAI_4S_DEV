@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace MinimalAPI.Services
 {
@@ -34,6 +35,20 @@ namespace MinimalAPI.Services
 
         //Propriedade para acessar o banco de dados
         public IMongoDatabase GetDatabase => _database;
+
+        public bool ClientExist(string clientId)
+        {
+            var collection = GetDatabase.GetCollection<BsonDocument>("client");
+            var filter = Builders<BsonDocument>.Filter.Eq("clientId", clientId);
+            return collection.Find(filter).Any();
+        }
+
+        public bool ProductExist(string productId)
+        {
+            var collection = GetDatabase.GetCollection<BsonDocument>("product");
+            var filter = Builders<BsonDocument>.Filter.Eq("productId", productId);
+            return collection.Find(filter).Any();
+        }
     }
 
 }

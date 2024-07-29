@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jJLXRcMQ/R9dGJkmhriC9lTbpqrtEMMgBa9bMlSJrvm2xzYmSOPFBeGhLvwYGqxSpU820eEz02ElIAYFz9KW2g==",
+  "dgSpecHash": "ESVmTB96p5hgqiSpVfwQCBzYQszqPq6ste4y5WZrqCyIsl/xiazFkY2JCfLb3mOXNZoscGEjJdGHlCoOlXlbFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\49470161831\\Desktop\\MinimalAPI\\MinimalAPI.csproj",
+  "projectFilePath": "C:\\Users\\49470161831\\Desktop\\SENAI_4S_DEV\\MinimalAPI\\MinimalAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\49470161831\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\49470161831\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

@@ -82,7 +82,7 @@ namespace MinimalAPI.Controllers
             {
                 var product = await _product.Find(product => product.Id == _id).ToListAsync();
 
-                return Ok(product);
+                return product is not null ? Ok(product) : NotFound();
             }
             catch (Exception e)
             {
@@ -91,20 +91,13 @@ namespace MinimalAPI.Controllers
         }
 
         [HttpPut("_id")]
-        public async Task<IActionResult> Update(string _id, Product updatedProduct)
+        public async Task<IActionResult> Update(Product updatedProduct)
         {
             try
             {
-                var product = _product.Find(product => product.Id == _id).FirstOrDefaultAsync();
+                var filter = Builders<Product>.Filter.Eq(x => x.Id, updatedProduct.Id);
 
-                if (product is null)
-                {
-                    return NotFound();
-                }
-
-                updatedProduct.Id = product.Id;
-
-                await _product.UpdateOneAsync(_id, updatedProduct);
+                await _product.ReplaceOneAsync(filter, updatedProduct);
 
                 return StatusCode(201);
             }
