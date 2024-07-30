@@ -11,6 +11,8 @@ namespace MinimalAPI.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IMongoCollection<Order> _order;
+        private readonly IMongoCollection<Client> _client;
+        private readonly IMongoCollection<Product> _product;
 
         public OrderController(MongoDbService mongoDbService)
         {
