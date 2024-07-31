@@ -98,13 +98,17 @@ namespace MinimalAPI.Controllers
         }
 
         [HttpGet("_id")]
-        public async Task<ActionResult<List<Order>>> GetById(string _id)
+        public async Task<ActionResult<Order>> GetById(string _id)
         {
             try
             {
-                var order = await _order.Find(x => x.Id == _id).ToListAsync();
+                var order = await _order.Aggregate()
+                    .Match(x => x.Id == _id) 
+                    .Lookup("Client", "ClientId", "Id", "Client") 
+                    .Lookup("Product", "ProductId", "Id", "Products")
+                    .FirstOrDefaultAsync();
 
-                return order is not null ? Ok(order) : NotFound();
+                return order != null ? Ok(order) : NotFound();
             }
             catch (Exception e)
             {
