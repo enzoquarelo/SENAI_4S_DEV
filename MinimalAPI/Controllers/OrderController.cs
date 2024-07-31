@@ -25,9 +25,21 @@ namespace MinimalAPI.Controllers
         {
             try
             {
-                var product = await _order.Find(FilterDefinition<Order>.Empty).ToListAsync();
+                var orders = await _order.Find(FilterDefinition<Order>.Empty).ToListAsync();
 
-                return Ok(product);
+                foreach (var order in orders)
+                {
+                    var filter = Builders<Product>.Filter.In(p => p.Id, order.ProductId);
+
+                    order.Products = await _product.Find(filter).ToListAsync();
+
+                    if (order.ClientId != null)
+                    {
+                        order.Client = await _client.Find(x => x.Id == order.ClientId).FirstOrDefaultAsync();
+                    }
+                }
+
+                return Ok(orders);
             }
             catch (Exception e)
             {
@@ -56,13 +68,13 @@ namespace MinimalAPI.Controllers
                 }
                 else
                 {
-                    return NotFound("Cliente nao encontrado");
+                    return NotFound("Cliente não encontrado");
                 }
 
                 var lista = new List<Product>();
 
                 foreach (var productId in newOrder.ProductId!)
-                {
+                 {
                     var item = _product.Find(p => p.Id == productId).FirstOrDefault();
 
                     if (item is not null)
@@ -78,7 +90,7 @@ namespace MinimalAPI.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return BadRequest("catch:" + e.Message);
             }
         }
 
@@ -87,7 +99,7 @@ namespace MinimalAPI.Controllers
         {
             try
             {
-                var result = await _order.DeleteOneAsync(x => x.Id == _id);
+                await _order.DeleteOneAsync(x => x.Id == _id);
 
                 return StatusCode(204);
             }
@@ -102,13 +114,14 @@ namespace MinimalAPI.Controllers
         {
             try
             {
+
                 var order = await _order.Aggregate()
                     .Match(x => x.Id == _id) 
                     .Lookup("Client", "ClientId", "Id", "Client") 
-                    .Lookup("Product", "ProductId", "Id", "Products")
-                    .FirstOrDefaultAsync();
+                    .Lookup("Product", "ProductId", "Id", "Product")
+                    .ToListAsync();
 
-                return order != null ? Ok(order) : NotFound();
+                return order is not null ? Ok(order) : NotFound();
             }
             catch (Exception e)
             {
