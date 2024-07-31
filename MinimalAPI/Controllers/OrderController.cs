@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MinimalAPI.Domains;
 using MinimalAPI.Services;
+using minimalAPIMongo.ViewModels;
 using MongoDB.Driver;
 
 namespace MinimalAPI.Controllers
@@ -36,13 +37,44 @@ namespace MinimalAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Order order)
+        public async Task<IActionResult> Post(OrderViewModel newOrder)
         {
             try
             {
-                await _order.InsertOneAsync(order);
+                Order order = new Order();
+                order.Id = newOrder.Id;
+                order.Date = newOrder.Date;
+                order.Status = newOrder.Status;
+                order.ProductId = newOrder.ProductId;
+                order.ClientId = newOrder.ClientId;
 
-                return StatusCode(201);
+                var clientOwner = _client.Find(c => c.Id == newOrder.ClientId).FirstOrDefaultAsync();
+
+                if (clientOwner is not null)
+                {
+                    order.Client = await clientOwner;
+                }
+                else
+                {
+                    return NotFound("Cliente nao encontrado");
+                }
+
+                var lista = new List<Product>();
+
+                foreach (var productId in newOrder.ProductId!)
+                {
+                    var item = _product.Find(p => p.Id == productId).FirstOrDefault();
+
+                    if (item is not null)
+                    {
+                        lista.Add(item);
+                    }
+                }
+
+                order.Products = lista;
+
+                await _order.InsertOneAsync(order);
+                return StatusCode(204);
             }
             catch (Exception e)
             {
