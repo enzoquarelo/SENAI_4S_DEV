@@ -1,0 +1,15 @@
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\bin\Debug\net8.0\Library.exe
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\bin\Debug\net8.0\Library.deps.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\bin\Debug\net8.0\Library.runtimeconfig.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\bin\Debug\net8.0\Library.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\bin\Debug\net8.0\Library.pdb
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.AssemblyInfoInputs.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.AssemblyInfo.cs
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.sourcelink.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\refint\Library.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.pdb
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\Library.genruntimeconfig.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\Library\obj\Debug\net8.0\ref\Library.dll
