@@ -1,0 +1,15 @@
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\bin\Debug\net8.0\Temperature.exe
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\bin\Debug\net8.0\Temperature.deps.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\bin\Debug\net8.0\Temperature.runtimeconfig.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\bin\Debug\net8.0\Temperature.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\bin\Debug\net8.0\Temperature.pdb
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.AssemblyInfoInputs.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.AssemblyInfo.cs
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.csproj.CoreCompileInputs.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.sourcelink.json
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\refint\Temperature.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.pdb
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\Temperature.genruntimeconfig.cache
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\xUnit_TestesUnitários\Temperature\obj\Debug\net8.0\ref\Temperature.dll
