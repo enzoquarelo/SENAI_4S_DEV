@@ -16,6 +16,13 @@ namespace Inventory.Test
             int quantidadeInicial = 1;
             int quantidadeAdicional = 2;
 
+            int quantidade;
+            inventory.ObterQuantidade(nomeProduto);
+            if (quantidade == 0)
+            {
+                inventory.AdicionarProduto(nomeProduto, quantidadeAdicional);
+            }
+
             inventory.AdicionarProduto(nomeProduto, quantidadeInicial);
             inventory.AdicionarProduto(nomeProduto, quantidadeAdicional);
 
