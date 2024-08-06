@@ -256,3 +256,5 @@ C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\obj\Debug\n
 C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\obj\Debug\net8.0\API_para_estudos_com_xUnit.pdb
 C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\obj\Debug\net8.0\API_para_estudos_com_xUnit.genruntimeconfig.cache
 C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\obj\Debug\net8.0\ref\API_para_estudos_com_xUnit.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\49470161831\Desktop\SENAI_4S_DEV\API_para_estudos_com_xUnit\bin\Debug\net8.0\Moq.dll

@@ -36,17 +36,44 @@ namespace API_para_estudos_com_xUnit.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Products produtoBuscado =  _context.Produtos.Find(id);
+
+                _context.Produtos.Remove(produtoBuscado);
+
+                _context.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<Products> Listar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Produtos.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar produtos", ex);
+            }
         }
 
         public List<Products> ListarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Produtos.Where(p => p.IdProduto == id).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao buscar produto por ID", ex);
+            }
         }
     }
 }
