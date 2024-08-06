@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_para_estudos_com_xUnit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb471ae15d1673600847f02713ebe28ea5f5877a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+479600f61751492629a3a78acaa49eb36b282689")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_para_estudos_com_xUnit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_para_estudos_com_xUnit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
