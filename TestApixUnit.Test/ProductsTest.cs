@@ -90,10 +90,10 @@ namespace TestApixUnit.Test
             var mockRepository = new Mock<IProductsRepository>();
             mockRepository.Setup(p => p.ListarPorId(productId)).Returns(product);
 
-            var controller = new ProductController(mockRepository.Object);
+            var controller = new Products(mockRepository.Object);
 
             // Act
-            var result = controller.GetById(productId);
+            var result = controller(productId);
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
@@ -102,6 +102,47 @@ namespace TestApixUnit.Test
             Assert.Equal(productId, returnProduct.IdProduto);
             Assert.Equal("Produto 1", returnProduct.Nome);
             Assert.Equal(99, returnProduct.Preco);
+        }
+
+        [Fact]
+        public void Put()
+        {
+            var existingProduct = new Products
+            {
+                IdProduto = Guid.NewGuid(),
+                Nome = "Produto Antigo",
+                Preco = 50
+            };
+
+            var updatedProduct = new Products
+            {
+                IdProduto = existingProduct.IdProduto,
+                Nome = "Produto Novo",
+                Preco = 100
+            };
+
+            var productList = new List<Products> { existingProduct };
+            var mockRepository = new Mock<IProductsRepository>();
+
+            mockRepository.Setup(p => p.Listar()).Returns(productList);
+
+            mockRepository.Setup(p => p.Atualizar(updatedProduct)).Callback(() =>
+            {
+                var productToUpdate = productList.FirstOrDefault(p => p.IdProduto == updatedProduct.IdProduto);
+                if (productToUpdate != null)
+                {
+                    productToUpdate.Nome = updatedProduct.Nome;
+                    productToUpdate.Preco = updatedProduct.Preco;
+                }
+            });
+
+            mockRepository.Object.Atualizar(updatedProduct);
+
+            // Assert
+            var updatedProductFromRepo = productList.FirstOrDefault(p => p.IdProduto == existingProduct.IdProduto);
+            Assert.NotNull(updatedProductFromRepo);
+            Assert.Equal("Produto Atualizado", updatedProductFromRepo.Nome);
+            Assert.Equal(100, updatedProductFromRepo.Preco);
         }
     }
 }
