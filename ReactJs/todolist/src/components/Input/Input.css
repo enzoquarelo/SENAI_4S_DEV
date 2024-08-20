@@ -1,0 +1,46 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(../../assets/fonts/Open_Sans/static/OpenSans-Regular.ttf);
+}
+
+.inputContainer {
+    border: 1px solid #FCFCFC;
+    border-radius: 7px;
+
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+
+    margin-top: 10px;
+}
+
+.input{
+    border: none;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    color: #FCFCFC;
+    font-family: "OpenSans";
+    font-size: 15px;
+
+    outline: none;
+
+    width: 80%;
+}
+
+.input::placeholder {
+    color: #FCFCFC;
+    font-family: 'OpenSans', sans-serif;
+    font-size: 15px;
+}
+
+.input-icon {
+    width: 24px;
+    height: 24px;
+}

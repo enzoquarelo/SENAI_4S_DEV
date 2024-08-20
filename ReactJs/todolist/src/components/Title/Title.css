@@ -1,0 +1,15 @@
+@font-face {
+    font-family: OpenSans_Bold;
+    src: url(../../assets/fonts/Open_Sans/static/OpenSans-Bold.ttf);
+}
+
+.title {
+    width: 100%;
+    font-family: OpenSans_Bold;
+    font-size: 28px;
+
+    text-align: center;
+    align-self: flex-start;
+
+    margin-top: 35px;
+}
