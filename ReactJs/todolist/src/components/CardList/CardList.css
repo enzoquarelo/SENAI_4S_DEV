@@ -1,0 +1,60 @@
+@font-face {
+    font-family: OpenSans_SemiBold;
+    src: url(../../assets/fonts/Open_Sans/static/OpenSans-SemiBold.ttf);
+}
+
+.containerCard{
+    width: 675px;
+    height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+}
+
+.description{
+
+    width: 70%;
+    font-family: OpenSans_SemiBold;
+    font-size: 16px;
+}
+
+.containerButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 76px;
+}
+
+.button{
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 33px;
+    height: 33px;
+
+    padding-right: 5px;
+}
+
+.checkbox{
+    width: 30px;
+    height: 30px;
+
+    border-radius: 4px;
+    border: 2px solid #8758FF;
+
+    cursor: pointer;
+}
