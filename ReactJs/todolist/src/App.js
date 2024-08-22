@@ -1,30 +1,39 @@
+import React, { useState } from 'react';
 import './App.css';
-import Title from './components/Title/Titile';
+import Title from './components/Title/Titile'
 import Input from './components/Input/Input';
 import Container from "./components/Container/Container";
 import search from "./assets/icons/material-symbols_search.svg";
 import Button from './components/Button/Button';
 import CardList from './components/CardList/CardList';
-import { useState } from 'react';
-
-import deleteIconDark from "./assets/icons/delete.png"
-import deleteIconWhite from "./assets/icons/deleteWhite.svg"
-
-import editIconDark from "./assets/icons/pencil.png"
-import editIconWhite from "./assets/icons/pencilWhite.svg"
+import AddTaskModal from './components/AddTaskModal/AddTaskModal';
+import deleteIconDark from "./assets/icons/delete.png";
+import deleteIconWhite from "./assets/icons/deleteWhite.svg";
+import editIconDark from "./assets/icons/pencil.png";
+import editIconWhite from "./assets/icons/pencilWhite.svg";
+import Header from "./components/Header/Header";
 
 function App() {
-    const [isChecked, setIsChecked] = useState(false);
+    const [tasks, setTasks] = useState([]); // Estado para armazenar as tarefas
+    const [showModal, setShowModal] = useState(false); // Estado para mostrar/ocultar o modal
+    const [taskToEdit, setTaskToEdit] = useState(null); // Estado para a tarefa a ser editada
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+    const handleAddTask = (description) => {
+        setTasks([...tasks, { id: Date.now(), description, isChecked: false }]);
     };
 
-    const cardBackgroundColor = isChecked ? "#6C45CE" : "#FCFCFC";
-    const textColor = isChecked ? "#FCFCFC" : "#25282C";
-    const buttonBorderColor = isChecked ? "#FCFCFC" : "#25282C";
-    const deleteIcon = isChecked ? deleteIconWhite : deleteIconDark;
-    const editeIcon = isChecked ? editIconWhite : editIconDark;
+    const handleDeleteTask = (taskId) => {
+        setTasks(tasks.filter(task => task.id !== taskId));
+    };
+
+    const handleEditTask = (taskId, newDescription) => {
+        setTasks(tasks.map(task => task.id === taskId ? { ...task, description: newDescription } : task));
+        setTaskToEdit(null);
+    };
+
+    const toggleTaskCheckbox = (taskId) => {
+        setTasks(tasks.map(task => task.id === taskId ? { ...task, isChecked: !task.isChecked } : task));
+    };
 
     return (
         <Container
@@ -42,12 +51,7 @@ function App() {
                 justifyContent="flex-start"
                 alignItems="center"
             >
-                <Title
-                    titleText="Terça-Feira, 24 de julho"
-                    highlightNumber="24"
-                    highlightColor="#8758FF"
-                    textColor="#FCFCFC"
-                />
+                <Header />
 
                 <Input
                     placeHolder="Procurar Tarefa"
@@ -56,20 +60,42 @@ function App() {
                     icon={search}
                 />
 
-                <CardList 
-                    taskDescription="Descrição da Tarefa" 
-                    backgroundColor={cardBackgroundColor}
-                    colorDescription={textColor}
-                    borderColor={buttonBorderColor}
-                    deleteIcon={deleteIcon}  
-                    pencilIcon={editeIcon}
-                    isChecked={isChecked} // Passando o estado
-                    handleCheckboxChange={handleCheckboxChange} // Passando a função de mudança
-                />
+                {tasks.map(task => (
+                    <CardList
+                        key={task.id}
+                        taskDescription={task.description}
+                        backgroundColor={task.isChecked ? "#6C45CE" : "#FCFCFC"}
+                        colorDescription={task.isChecked ? "#FCFCFC" : "#25282C"}
+                        borderColor={task.isChecked ? "#FCFCFC" : "#25282C"}
+                        deleteIcon={task.isChecked ? deleteIconWhite : deleteIconDark}
+                        pencilIcon={task.isChecked ? editIconWhite : editIconDark}
+                        isChecked={task.isChecked}
+                        handleCheckboxChange={() => toggleTaskCheckbox(task.id)}
+                        handleDelete={() => handleDeleteTask(task.id)}
+                        handleEdit={() => setTaskToEdit(task)}
+                    />
+                ))}
 
             </Container>
 
-            <Button buttonText={"Nova Tarefa"} width={200} height={50} />
+            <Button buttonText={"Nova Tarefa"} width={200} height={50} onClick={() => setShowModal(true)} />
+            
+            {showModal && (
+                <AddTaskModal
+                    onAddTask={(description) => {
+                        handleAddTask(description);
+                        setShowModal(false);
+                    }}
+                    onClose={() => setShowModal(false)}
+                />
+            )}
+
+            {taskToEdit && (
+                <AddTaskModal
+                    onAddTask={(description) => handleEditTask(taskToEdit.id, description)}
+                    onClose={() => setTaskToEdit(null)}
+                />
+            )}
         </Container>
     );
 }

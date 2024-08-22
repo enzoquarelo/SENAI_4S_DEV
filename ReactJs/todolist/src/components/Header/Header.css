@@ -1,0 +1,19 @@
+.header {
+  width: 90%;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .header h1 {
+    
+    color: #FCFCFC;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .header h1 .day {
+    color: #8758FF; /* Aplica a cor específica ao "day" */
+  }
+  
+  
+  
